@@ -12,3 +12,11 @@ def choose():
 @app.route('/searchforproperty')
 def searchforproperty():
     return render_template('search_for_property.html')
+
+@app.route('/checkproperty')
+def check_property():
+    render_template(check_property.html)
+
+@app.route('/reference')
+def reference():
+    render_template('reference.html')
