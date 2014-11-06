@@ -2,24 +2,49 @@
 
 {% block content %}
 
-<div>
-  <br/>
-  <h2>Your unique reference is: {{code}}</h2>
+<main id="wrapper" role="main">
+    <div id="content">
 
-<p>QR Code</p> <br/>
-<object type="image/svg+xml" data="{{ url_for('static', filename = 'prove-it.svg') }}">
-    Your Browser does not support SVG
-</object>
+      <br>
 
-<br/>
-<form role="form" action="/sendsms" method="POST" name="phone-details">
-    <label for="phonenumber">Phone Number</label>
-    <input type="text" name="phonenumber" value="a test phone number">
-    <input name="ref_code" type="hidden" value={{code}}>
+      <div class="grid-wrapper">
 
-    <button type="submit">Send</button>
-</form>
+        <div class="grid grid-1-2">
+           <div class="inner-block">
 
-</div>
+              <h1 class="form-title heading-large">
+              Proof complete
+              </h1>
+
+              <h2>Your unique reference is: {{code}}</h2>
+
+              <p>QR Code</p>
+              <object type="image/svg+xml" data="{{ url_for('static', filename = 'prove-it.svg') }}">
+                  Your Browser does not support SVG
+              </object>
+
+              <br/>
+
+            <form action="/sendsms" method="POST" class="phone-details">
+
+              <div class="form-group">
+
+                <label class="form-label" for="phonenumber">Phone Number</label>
+                <input class="form-control"type="text" name="phonenumber">
+                <input name="ref_code" type="hidden" value={{code}}>
+
+                <button class="button" type="submit">Send</button>
+
+              </div>
+
+            </form>
+
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</main>
 
 {% endblock %}
