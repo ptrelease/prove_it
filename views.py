@@ -20,8 +20,9 @@ def check_property():
 @app.route('/reference')
 def reference():
     return render_template('reference.html')
+    render_template('reference.html')
+
 
 @app.route('/login')
 def login():
     return render_template('choose_to_prove.html')
-
