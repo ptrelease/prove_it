@@ -1,5 +1,6 @@
 from __init__ import app
 from flask import render_template
+from qr import qr_generator
 
 @app.route('/')
 def index():
@@ -19,6 +20,8 @@ def check_property():
 
 @app.route('/reference')
 def reference():
+    code = "SHF3HFH7"
+    qr_generator.generate_qr_code(code)
     return render_template('reference.html')
     render_template('reference.html')
 

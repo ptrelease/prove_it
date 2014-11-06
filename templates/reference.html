@@ -6,8 +6,12 @@
 
 <p>Your unique reference is: SHF3HFH7</p>
 
-<p>QR Code</p>
+<p>QR Code</p> <br/>
+<object type="image/svg+xml" data="{{ url_for('static', filename = 'prove-it.svg') }}">
+    Your Browser does not support SVG
+</object>
 
+<br/>
 <form role="form" action="/sendsms" method="get" name="phone-details">
     <label for="phonenumber">Phone Number</label>
     <input type="text" name="phonenumber" value="">
