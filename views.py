@@ -15,8 +15,8 @@ def searchforproperty():
 
 @app.route('/checkproperty')
 def check_property():
-    render_template(check_property.html)
+    return render_template('check_property.html')
 
 @app.route('/reference')
 def reference():
-    render_template('reference.html')
+    return render_template('reference.html')
