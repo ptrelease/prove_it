@@ -3,7 +3,7 @@ from flask import render_template
 
 @app.route('/')
 def index():
-  return render_template("index.html")
+    return render_template("index.html")
 
 @app.route('/choose')
 def choose():
@@ -20,3 +20,8 @@ def check_property():
 @app.route('/reference')
 def reference():
     return render_template('reference.html')
+
+@app.route('/login')
+def login():
+    return render_template('choose_to_prove.html')
+

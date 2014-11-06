@@ -1,1 +1,49 @@
-go simon...
+<html>
+<div>
+    <h1>Prove-it Sucka!(.GOV.UK)</h1>
+
+    <div class="intro">
+
+        <div class="step-wrap" id="step-wrap">
+
+            <section class="step step-1">
+
+                <img class="icon" src="/static/images/icon-crown-shield-2.png">
+
+                <div class="text-wrap">
+                    <!-- <strong class="new">New</strong> -->
+                    <h4>Before you can Prove-It</h4>
+
+                    <h3>you need to verify your identity</h3>
+
+                    <form action="/login" method="GET">
+                        <label>Email</label> <input type="text" name="email" id="email"><br/>
+                        <label>Password</label> <input type="text" name="password" id="password"> <br/>
+                        <button type="submit">Submit</button>
+                    </form>
+
+                    <details>
+
+                        <summary aria-controls="details-content-0" tabindex="0">
+                            <span class="summary">Can I use Government Gateway?</span>
+                        </summary>
+
+                        <div class="panel-indent" id="details-content-0" aria-expanded="false" >
+                            <p>
+                                You can't use Government Gateway with this service, it's being replaced by GOV.UK Verify.
+                            </p>
+                        </div>
+
+                    </details>
+
+                </div>
+
+            </section>
+
+        </div>
+
+    </div>
+
+    <img src="{{ url_for('static', filename = 'mrt.jpg') }}" alt="Mr T" width="500" height="520"/>
+</div>
+</html>
