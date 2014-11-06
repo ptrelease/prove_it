@@ -2,21 +2,40 @@
 
 {% block content %}
 
-<div>
+<main id="wrapper" role="main">
+    <div id="content">
 
-  <p>
-    Please enter house number and postcode:
-  </p>
+      <br><br>
 
-  <form role="form" action="/checkproperty" method="get" name="property-details">
-      <label for="housenumber">House Number</label>
-      <input type="text" name="housenumber" value="">
-      <label for="postcode">Postcode</label>
-      <input type="text" name="postcode" value="">
+      <div class="grid-wrapper">
 
-      <button type="submit">Go</button>
-  </form>
+        <div class="grid grid-1-2">
+           <div class="inner-block">
 
-</div>
+            <form class="form" role="form" action="/checkproperty" method="get" name="property-details">
+
+              <h2 class="form-title heading-large">
+                Please enter house number and postcode:
+              </h2>
+
+              <div class="form-group">
+
+                <label class="form-label" for="housenumber">House Number</label>
+                <input class="form-control" type="text" name="housenumber" value="">
+                <label class="form-label" for="postcode">Postcode</label>
+                <input class="form-control" type="text" name="postcode" value="">
+
+                <button class="button" type="submit">Go</button>
+
+              </div>
+            </form>
+
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</main>
 
 {% endblock %}

@@ -2,20 +2,48 @@
 
 {% block content %}
 
-<div>
-  <h1>Pick which property is yours</h1>
-  <ul>
-      <li>
-          <form action="/reference" method="GET">
-              <td> <input type="submit" value="5 Miller Way"></td>
-          </form>
-      </li>
-      <li>
-          <form action="/reference" method="GET">
-              <td> <input type="submit" value="6 Miller Way"></td>
-          </form>
-      </li>
-  </ul>
-</div>
+<main id="wrapper" role="main">
+    <div id="content">
+
+      <br><br>
+
+      <div class="grid-wrapper">
+
+        <div class="grid grid-1-2">
+           <div class="inner-block">
+
+            <form action="/reference" method="get" class="form">
+
+              <h1 class="form-title heading-large">
+                Pick your property
+              </h1>
+
+              <div class="form-group">
+
+
+                  <label for="radio-1" class="block-label">
+                    <input id="radio-1" type="radio" name="radio-group" value="1">
+                    5 Miller Way, Plymouth, PL6 8UQ.
+                  </label>
+
+                  <label for="radio-2" class="block-label">
+                    <input id="radio-2" type="radio" name="radio-group" value="2">
+                    6 Miller Way, Plymouth, PL6 8UQ.
+                  </label>
+
+                  <div class="form-group">
+                    <button type="submit" class="button">Next</button>
+                  </div>
+
+              </div>
+
+            </form>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</main>
 
 {% endblock %}
