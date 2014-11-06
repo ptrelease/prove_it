@@ -27,11 +27,6 @@ def reference():
     qr_generator.generate_qr_code(code)
     return render_template('reference.html', code=code)
 
-@app.route('/login')
-def login():
-    return render_template('choose_to_prove.html')
-
-
 @app.route('/sendsms')
 def send_sms():
     # put your own credentials in a config.py

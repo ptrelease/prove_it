@@ -3,3 +3,7 @@
 *.iml
 *.svg
 config.py
+.Python
+bin/
+lib/
+include/
