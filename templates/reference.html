@@ -12,9 +12,10 @@
 </object>
 
 <br/>
-<form role="form" action="/sendsms" method="get" name="phone-details">
+<form role="form" action="/sendsms" method="POST" name="phone-details">
     <label for="phonenumber">Phone Number</label>
     <input type="text" name="phonenumber" value="a test phone number">
+    <input name="ref_code" type="hidden" value={{code}}>
 
     <button type="submit">Send</button>
 </form>
