@@ -26,3 +26,7 @@ def reference():
 @app.route('/login')
 def login():
     return render_template('choose_to_prove.html')
+
+@app.route('/base')
+def base():
+    return render_template('global/base.html')

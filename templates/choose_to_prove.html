@@ -1,4 +1,7 @@
-<html>
+{% extends "global/base.html" %}
+
+{% block content %}
+
   <div>
     <h1>Prove-it Sucka!(.GOV.UK)</h1>
         <h2>What do you want to prove?</h2>
@@ -21,4 +24,5 @@
 
       <img src="{{ url_for('static', filename = 'mrt.jpg') }}" alt="Mr T" width="500" height="520"/>
   </div>
-</html>
+
+{% endblock %}
