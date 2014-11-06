@@ -1,7 +1,7 @@
 import random
 import string
 from __init__ import app
-from flask import render_template, Response
+from flask import render_template, Response, request
 from twilio.rest import TwilioRestClient
 from qr import qr_generator
 
@@ -27,18 +27,23 @@ def reference():
     qr_generator.generate_qr_code(code)
     return render_template('reference.html', code=code)
 
-@app.route('/sendsms')
+@app.route('/login')
+def login():
+    return render_template('choose_to_prove.html')
+
+
+@app.route('/sendsms', methods=['POST'])
 def send_sms():
     # put your own credentials in a config.py
     ACCOUNT_SID = app.config['ACCOUNT_SID']
     AUTH_TOKEN = app.config['AUTH_TOKEN']
-
+    ref_code = request.form.get('ref_code')
     client = TwilioRestClient(ACCOUNT_SID, AUTH_TOKEN)
 
     client.messages.create(
         to=app.config['TO_TEST_NUMBER'],
         from_=app.config['FROM_TEST_NUMBER'],
-        body="a reference",
+        body="your reference is " + ref_code
         )
 
     return Response("message sent", status=200)
@@ -49,3 +54,11 @@ def base():
 
 def code_generator(size=8, chars=(string.ascii_uppercase + string.digits)):
     return ''.join(random.choice(chars) for _ in range(size))
+
+@app.route('/checkproof')
+def check_proof():
+    return render_template('check_proof.html')
+
+@app.route('/checkreference')
+def check_reference():
+    return render_template('property_owned_confirmation.html')
