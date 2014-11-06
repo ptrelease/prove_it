@@ -13,31 +13,37 @@
            <div class="inner-block">
 
               <h1 class="form-title heading-large">
-              Proof complete
+              Proof reference generated
               </h1>
 
-              <h2>Your unique reference is: {{code}}</h2>
+              <h2 style="font-size:30px">Your one time use unique reference is: {{code}}</h2>
+
+              <br>
 
               <p>QR Code</p>
               <object type="image/svg+xml" data="{{ url_for('static', filename = 'prove-it.svg') }}">
                   Your Browser does not support SVG
               </object>
 
-              <br/>
+              <br/><br>
 
-            <form action="/sendsms" method="POST" class="phone-details">
+              <p>
+                To send yourself a text message with this unique reference please enter you phone number below and hit send.
+              </p>
 
-              <div class="form-group">
+              <form action="/sendsms" method="POST" class="phone-details">
 
-                <label class="form-label" for="phonenumber">Phone Number</label>
-                <input class="form-control"type="text" name="phonenumber">
-                <input name="ref_code" type="hidden" value={{code}}>
+                <div class="form-group">
 
-                <button class="button" type="submit">Send</button>
+                  <label class="form-label" for="phonenumber">Phone Number</label>
+                  <input class="form-control"type="text" name="phonenumber">
+                  <input name="ref_code" type="hidden" value={{code}}>
 
-              </div>
+                  <button class="button" type="submit">Send</button>
 
-            </form>
+                </div>
+
+              </form>
 
         </div>
       </div>
