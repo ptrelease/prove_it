@@ -62,3 +62,11 @@ def check_proof():
 @app.route('/checkreference')
 def check_reference():
     return render_template('property_owned_confirmation.html')
+
+@app.route('/checkreference/<code>')
+def check_ref_code(code):
+    return render_template('property_owned_confirmation.html')
+
+@app.route('/fishfail')
+def fishfail():
+    return render_template('fishfail.html')
