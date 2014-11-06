@@ -1,10 +1,10 @@
-<html>
+{% extends "global/base.html" %}
 
-<head></head>
+{% block content %}
 
-<body>
+<div>
 
-<p>Your unique reference is: SHF3HFH7</p>
+  <p>Your unique reference is: SHF3HFH7</p>
 
 <p>QR Code</p> <br/>
 <object type="image/svg+xml" data="{{ url_for('static', filename = 'prove-it.svg') }}">
@@ -19,6 +19,6 @@
     <button type="submit">Send</button>
 </form>
 
-</body>
+</div>
 
-</html>
+{% endblock %}
