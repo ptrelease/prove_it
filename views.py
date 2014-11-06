@@ -1,3 +1,5 @@
+import random
+import string
 from __init__ import app
 from flask import render_template
 from qr import qr_generator
@@ -20,11 +22,9 @@ def check_property():
 
 @app.route('/reference')
 def reference():
-    code = "SHF3HFH7"
+    code = code_generator()
     qr_generator.generate_qr_code(code)
-    return render_template('reference.html')
-    render_template('reference.html')
-
+    return render_template('reference.html', code=code)
 
 @app.route('/login')
 def login():
@@ -33,3 +33,6 @@ def login():
 @app.route('/base')
 def base():
     return render_template('global/base.html')
+
+def code_generator(size=8, chars=(string.ascii_uppercase + string.digits)):
+    return ''.join(random.choice(chars) for _ in range(size))

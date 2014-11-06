@@ -3,8 +3,8 @@
 {% block content %}
 
 <div>
-
-  <p>Your unique reference is: SHF3HFH7</p>
+  <br/>
+  <h2>Your unique reference is: {{code}}</h2>
 
 <p>QR Code</p> <br/>
 <object type="image/svg+xml" data="{{ url_for('static', filename = 'prove-it.svg') }}">
