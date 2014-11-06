@@ -54,3 +54,11 @@ def base():
 
 def code_generator(size=8, chars=(string.ascii_uppercase + string.digits)):
     return ''.join(random.choice(chars) for _ in range(size))
+
+@app.route('/checkproof')
+def check_proof():
+    return render_template('check_proof.html')
+
+@app.route('/checkreference')
+def check_reference():
+    return render_template('property_owned_confirmation.html')
